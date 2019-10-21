@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>{{currentLanguage === 'EN' ? replyTitleEN : replyTitleES }}</h2>
+<mat-dialog-content>
+    <textarea [(ngModel)]="replyMessage" class="reply-message" (input)="updateNumberOfChars()"></textarea>
+</mat-dialog-content>
+
+<div class="footer-controls_container">
+    <button mat-raised-button
+        (click)="onCancel()">{{isInitialLoad ? 'cancel' : 'cancel' | translate:currentLanguage}}</button>
+    <p>{{numberOfChars}}/{{maximumNumberOfChars}}</p>
+    <button mat-raised-button (click)="onReply()"
+        [disabled]="numberOfChars === 0 || numberOfChars > maximumNumberOfChars">{{isInitialLoad ? 'reply' : 'reply' | translate:currentLanguage}}</button>
+</div>

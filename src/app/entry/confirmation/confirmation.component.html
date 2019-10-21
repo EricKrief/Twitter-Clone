@@ -1,0 +1,7 @@
+<h2 mat-dialog-title>{{isInitialLoad ? confirmationMessage : 'confirmationMessage' | translate:currentLanguage}}</h2>
+<div class="footer-buttons">
+    <button mat-raised-button
+        (click)="onCancel()">{{isInitialLoad ? 'cancel' : 'cancel' | translate:currentLanguage}}</button>
+    <button mat-raised-button
+        (click)="onDelete()">{{isInitialLoad ? 'delete' : 'delete' | translate:currentLanguage}}</button>
+</div>

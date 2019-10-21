@@ -1,0 +1,24 @@
+<div class="main">
+
+    <form [formGroup]="loginForm" class="form-container" (ngSubmit)="onSubmit()">
+        <h1 class="header-login">{{isInitialLoad ? 'Login' : 'Login' | translate:currentLanguage}}</h1>
+        <mat-form-field class="form-input">
+            <input matInput [placeholder]="isInitialLoad ? 'Email' : 'email' | translate:currentLanguage"
+                formControlName="email" />
+        </mat-form-field>
+        <span class="error-message"
+            *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">{{isInitialLoad ? emailErrorMessage : 'emailErrorMessage' | translate:currentLanguage}}</span>
+        <mat-form-field class="form-input">
+            <input matInput type="password"
+                [placeholder]="isInitialLoad ? 'Password' : 'password' | translate:currentLanguage"
+                formControlName="password" />
+        </mat-form-field>
+        <span class="error-message"
+            *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">{{isInitialLoad ? passwordErrorMessage : 'passwordErrorMessage' | translate:currentLanguage}}</span>
+        <span class="error-message"
+            *ngIf="incorrectLogin && loginForm.get('password').touched && loginForm.get('email').touched">{{isInitialLoad ? loginErrorMessage : 'loginErrorMessage' | translate:currentLanguage}}</span>
+
+        <button [disabled]="!loginForm.get('email').valid || !loginForm.get('password').valid" class="login-button"
+            mat-raised-button color="primary">{{isInitialLoad ? 'login' : 'login' | translate:currentLanguage}}</button>
+    </form>
+</div>

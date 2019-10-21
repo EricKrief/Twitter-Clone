@@ -1,0 +1,9 @@
+<div class="container">
+    <textarea class="post-body" [(ngModel)]="postBody" (input)="updateNumberOfChars()"
+        [placeholder]="isInitialLoad ? postPlaceholder : 'postPlaceholder' | translate:currentLanguage"></textarea>
+    <div class="post-controls_container">
+        <p class="digit-counter">{{numberOfChars}}/{{maximumNumberOfChars}}</p>
+        <button [disabled]="numberOfChars === 0 || numberOfChars > maximumNumberOfChars" class="post-button" (click)="create()"
+            mat-raised-button color="primary">{{isInitialLoad ? 'post' : 'post' | translate:currentLanguage}}</button>
+    </div>
+</div>

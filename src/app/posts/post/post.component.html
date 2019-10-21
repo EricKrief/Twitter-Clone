@@ -1,0 +1,33 @@
+<div class="main" *ngIf="post">
+    <div class="main-content">
+        <img class="user-img" (click)="goToProfile()" src="{{post.avatarUrl}}" />
+
+        <div class="text-content">
+            {{post.username}} - {{post.postDate | date:'d/M/yy'}}
+            <div class="post-body">
+                {{post.text}}
+            </div>
+        </div>
+    </div>
+    <ul class="footer-icons_container">
+        <li *ngIf="loggedInUsername === post.username">
+            <img class="footer-icons" (click)="onDelete()"
+                src="https://freeicons.io/laravel/public/uploads/icons/png/17846901421548336124-128.png" />
+        </li>
+        <li *ngIf="loggedInUsername">
+            <img class="footer-icons" (click)="openDialog()"
+                src="https://freeicons.io/laravel/public/uploads/icons/png/432411181551940360-128.png" />
+        </li>
+        <li>
+            {{post.stars}}
+        </li>
+        <li *ngIf="!post.starredByMe">
+            <img class="footer-icons" (click)="toggleStar()"
+                src="https://img.icons8.com/material-sharp/24/000000/star.png" />
+        </li>
+        <li *ngIf="post.starredByMe">
+            <img class="footer-icons" (click)="toggleStar()"
+                src="https://img.icons8.com/color/48/000000/filled-star.png" />
+        </li>
+    </ul>
+</div>

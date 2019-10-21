@@ -1,0 +1,63 @@
+{
+    "languages": [
+        {
+            "title": "EN",
+            "wordMapping": {
+                "home": "home",
+                "profile": "profile",
+                "register": "register",
+                "Register": "Register",
+                "login": "login",
+                "Login": "Login",
+                "logout": "logout",
+                "post": "post",
+                "registered": "Registered",
+                "lastLogin": "Last login",
+                "email": "Email",
+                "password": "Password",
+                "username": "Username",
+                "reply": "reply",
+                "cancel": "cancel",
+                "delete": "delete",
+                "emailErrorMessage": "You must enter a valid email",
+                "usernameErrorMessage": "You must enter a username",
+                "passwordErrorMessage": "You must enter a password",
+                "loginErrorMessage": "Email or password are incorrect",
+                "Email already taken": "Email is already taken",
+                "Username already taken": "Username is already taken",
+                "postPlaceholder": "Share your thoughts with your friends...",
+                "confirmationMessage": "Are you sure you want to delete this post?"
+            }
+        },
+        {
+            "title": "ES",
+            "wordMapping": {
+                "home": "inicio",
+                "profile": "perfil",
+                "register": "registro",
+                "Register": "Registro",
+                "login": "iniciar sesión",
+                "Login": "Iniciar sesión",
+                "logout": "cerrar sesión",
+                "post": "enviar",
+                "registered": "Registrado",
+                "lastLogin": "Último acceso",
+                "email": "Correo electrónico",
+                "password": "Contraseña",
+                "username": "Nombre de usuario",
+                "reply": "respuesta",
+                "cancel": "cancelar",
+                "delete": "eliminar",
+                "emailErrorMessage": "Debes ingresar un correo electrónico válido",
+                "usernameErrorMessage": "Debes ingresar un nombre de usuario",
+                "passwordErrorMessage": "Debes ingresar una contraseña",
+                "loginErrorMessage": "El e-mail o la contraseña son incorrectos",
+                "Email already taken": "el correo electronico ya ha sido tomado",
+                "Username already taken": "Este nombre de usuario ya está tomado",
+                "postPlaceholder": "Comparte tus pensamientos con tus amigos...",
+                "confirmationMessage": "Estás seguro de que deseas eliminar esta publicación?"
+            }
+        }
+    ],
+    "defaultLanguage": "EN"
+}

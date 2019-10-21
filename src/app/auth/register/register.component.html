@@ -1,0 +1,35 @@
+<div class="main">
+    <form [formGroup]="registerForm" class="form-container" (ngSubmit)="onSubmit()">
+        <h1 class="header-register">{{isInitialLoad ? 'Register' : 'Register' | translate:currentLanguage}}</h1>
+        <mat-form-field class="form-input">
+            <input matInput [placeholder]="isInitialLoad ? 'Email' : 'email' | translate:currentLanguage"
+                formControlName="email" />
+        </mat-form-field>
+        <span class="error-message"
+            *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched">{{isInitialLoad ? emailErrorMessage : 'emailErrorMessage' | translate:currentLanguage}}</span>
+
+
+        <mat-form-field class="form-input">
+            <input matInput [placeholder]="isInitialLoad ? 'Username' : 'username' | translate:currentLanguage"
+                formControlName="username" />
+        </mat-form-field>
+        <span class="error-message"
+            *ngIf="!registerForm.get('username').valid && registerForm.get('username').touched">{{isInitialLoad ? usernameErrorMessage : 'usernameErrorMessage' | translate:currentLanguage}}</span>
+
+
+        <mat-form-field class="form-input">
+            <input matInput type="password"
+                [placeholder]="isInitialLoad ? 'Password' : 'password' | translate:currentLanguage"
+                formControlName="password" />
+        </mat-form-field>
+        <span class="error-message"
+            *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched">{{isInitialLoad ? passwordErrorMessage : 'passwordErrorMessage' | translate:currentLanguage}}</span>
+        <span class="error-message"
+            *ngIf="registerErrorMessage && registerForm.get('email').touched">{{isInitialLoad ? registerErrorMessage : registerErrorMessage | translate:currentLanguage}}</span>
+
+        <button
+            [disabled]="!registerForm.get('email').valid || !registerForm.get('username').valid || !registerForm.get('password').valid"
+            class="register-button" mat-raised-button
+            color="primary">{{isInitialLoad ? 'register' : 'register' | translate:currentLanguage}}</button>
+    </form>
+</div>

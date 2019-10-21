@@ -1,0 +1,14 @@
+.main{
+    padding:0.5em;
+    margin-left: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.main:hover{
+    color: white;
+}
+
+.active{
+    text-decoration: underline;
+}

@@ -1,0 +1,11 @@
+<div class="user-container" *ngIf="user">
+    <img src="{{user.avatarUrl}}" class="user-img" />
+    <div class="user-details-container">
+        <span class="user-details">{{user.username}}</span>
+        <span class="user-details">{{isInitialLoad ? 'Registered' : 'registered' | translate:currentLanguage}}:
+            {{user.registrationDate | date:'d/M/yy'}}</span>
+        <span class="user-details">{{isInitialLoad ? 'Last login' : 'lastLogin' | translate:currentLanguage}}:
+            {{user.lastLoginDate | date:'d/M/yy, h:mm a'}}</span>
+    </div>
+</div>
+<app-post-list [user]="user" *ngIf="user"></app-post-list>
